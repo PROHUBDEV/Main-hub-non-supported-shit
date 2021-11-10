@@ -30,6 +30,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-no
 --made by SirShady#4296
 end
  else 
-  
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/Unsupported', true))()
+--made by SirShady#4296
   
  
