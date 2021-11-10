@@ -29,8 +29,6 @@ elseif game.PlaceID == 301549746 then -- Counter Blox
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
- else 
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/Unsupported', true))()
---made by SirShady#4296
+
   
  
