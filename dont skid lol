@@ -1,0 +1,2318 @@
+-- Made By PROHUB DEV
+-- supports Build a boat,Tower of hell,Prison Life,Ninja Legends,Project Lazarus,CBRO,Arsenal
+
+if game.PlaceId == 155615604 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Ty for using FallenWare - Prison Life", "Sentinel")
+elseif game.PlaceId == 3956818381 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FallenWare-V1-Ninja Legends", "DarkTheme")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewToggle("Auto Swing", "Make your player autoswing", function(v)
+        getgenv().autoswing = v
+        while true do
+            if not getgenv().autoswing then return end
+            for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if v:FindFirstChild("ninjitsuGain") then
+                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                    break
+                end
+            end
+            local A_1 = "swingKatana"
+            local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+            Event:FireServer(A_1)
+            wait(0.1)
+        end
+    end)
+
+    MainSection:NewToggle("Auto Sell", "Makes your player autosell", function(v)
+        getgenv().autosell = v
+        while true do
+            if getgenv().autoswing == false then return end
+            game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            wait(0.1)
+            game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = CFrame.new(0,0,0)
+            wait(0.1)
+        end
+    end)
+
+    MainSection:NewButton("Unlock all islands", "Unlocks all islands", function()
+        local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        for _,v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            wait(0.1)
+        end
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
+    end)
+    
+    MainSection:NewToggle("Auto buy all swords", "Auto buys all swords", function(v)
+        getgenv().buyswords = v
+        while true do
+            if not getgenv().buyswords then return end
+            local A_1 = "buyAllSwords"
+            local A_2 = "Inner Peace Island"
+            local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+            Event:FireServer(A_1, A_2)
+            wait(0.5)
+        end
+    end)
+
+    MainSection:NewToggle("Auto buy all belts", "Auto buys all belts", function(v)
+        getgenv().buybelts = v
+        while true do
+            if not getgenv().buybelts then return end
+            local A_1 = "buyAllBelts"
+            local A_2 = "Inner Peace Island"
+            local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+            Event:FireServer(A_1, A_2)
+            wait(0.5)
+        end
+    end)
+elseif game.PlaceId == 1962086868 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FallenWare TOH V1", "Synapse")
+ -- MAIN
+ local Tab = Window:NewTab("Main")
+ local Section = Tab:NewSection("Main")
+ local Tab2 = Window:NewTab("Message")
+ local Section2 = Tab2:NewSection("MessageBot")
+ local Tab3 = Window:NewTab("Credits")
+ local Section3 = Tab3:NewSection("Discord Username")
+ 
+ 
+ Section:NewButton("GodMode", "GODMODE FUCK YE", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/MSZAznxp", true))()
+ end)
+ Section:NewButton("ControlTP", "Press control and click!!", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/rS2DBx4Y", true))()
+ end)
+ Section:NewButton("Give All TOOLS", "Detectable lol fuck", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/ngVWmQ8m", true))()
+ end)
+ Section:NewButton("Instant Win", "EZ AS FUCK YES", function()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.tower.sections.finish.exit.ParticleBrick.CFrame
+ end)
+ Section:NewButton("Inf Jump", "Just press space Dumbass!", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/WUquqYN0", true))()
+ end) 
+ Section:NewSlider("WalkSpeed", "SliderInfo", 1500, 0, function(s) -- 1500 (MaxValue) | 0 (MinValue)
+     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+ end)
+ Section:NewSlider("JumpPower", "SliderInfo ofc wtf", 1500, 0, function(s) -- 1500 (MaxValue) | 0 (MinValue)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+ end)
+ Section:NewButton("AntiKick", "Use this", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/BMGbkQ71", true))()
+ end)
+ Section:NewButton("Noclip (insta ban the dev is an asshole)", "Im lazy to fix this just dont fuckin use it!s", function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/Czgaerid", true))()
+ end)
+ Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+     Library:ToggleUI()
+ end)
+ Section2:NewButton("Send Bot Message", "fuck it dosent work ill work on it!", function()
+     loadstring(game:HttpGet("https://pastebin.com/Q96NUmME", true))()
+ end)
+ Section3:NewButton("Credits: SirShadyVI#4296", "Fuck", function()
+     print("Okkkkkkkkk")
+ end)
+ Section3:NewButton("The Dev is an asshole and is Lazy", "shit", function()
+     print("Okkkkkkkkk")
+ end)
+ Section3:NewButton("I used Synapse KAVO UI Theme", "ass", function()
+     print("Okkkkkkkkk")
+ end)
+ 
+ -- dont fuckin take this off --
+ if getconnections then
+     for i,v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
+       v:Disable()
+     end
+   end
+elseif game.PlaceId == 537413528 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("PROHUB Auto Farm", "Synapse")
+
+    --Main
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+    
+
+    MainSection:NewButton("AutoFarm", "non stop auto farm", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/urmomjklol69/GoldFarmBabft/main/GoldFarm.lua'),true))()
+    end)
+    -- Info
+ local Player = Window:NewTab("Credits and info") 
+local PlayerSection = Player:NewSection("SirShadyVI#4296")
+local PlayerSection = Player:NewSection("if it gets patched well fuck")
+local PlayerSection = Player:NewSection("this script only works in build a boat")
+elseif game.PlaceId == 443406476 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FallenWare-PROJECT LAZARUS", "Midnight")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("PROHUB V1 Project Lazarus")
+    local Player = Window:NewTab("Player")
+    local Player = Player:NewSection("Only works in voting area/Lobby only")
+    local Credits = Window:NewTab("Credits")
+    local Credits = Credits:NewSection("About/discord")
+    
+    MainSection:NewButton("Inf Ammo", "no more reload ez", function()    hookfunction(gcinfo, function()
+        return math.random(200,350)
+     end)
+     
+     -- // Constants \\ --
+     -- [ Services ] --
+     local Services = setmetatable({}, {__index = function(Self, Index)
+        local NewService = game:GetService(Index)
+        if NewService then
+            Self[Index] = NewService
+        end
+        return NewService
+     end})
+     
+     -- [ LocalPlayer ] --
+     local LocalPlayer = Services.Players.LocalPlayer
+     
+     -- // Variables \\ --
+     local Connections = {
+        Weapon1 = nil;
+        Weapon2 = nil;
+        Weapon3 = nil;
+        Backpack = nil;
+     }
+     
+     local RoundNumber = workspace.RoundNum
+     
+     -- // Event Listeners \\ --
+     local function CharacterAdded(Character)
+        local Backpack = LocalPlayer:WaitForChild('Backpack')
+     
+        local function ChildAdded(Child)
+            if Child.Name == "Weapon1" or Child.Name == "Weapon2" or Child.Name == "Weapon3" then
+                local Module = require(Child)
+                
+                if Connections[Child.Name] then
+                    Connections[Child.Name]:Disconnect()
+                    Connections[Child.Name] = nil
+                end
+     
+                Connections[Child.Name] = Services.RunService.RenderStepped:Connect(function()
+                    Module.Ammo = Module.MaxAmmo
+                    Module.StoredAmmo = Module.MaxAmmo  end)
+                end
+            end
+         
+            if Connections.Backpack then
+                Connections.Backpack:Disconnect()
+                Connections.Backpack = nil
+            end
+         
+            for i,v in ipairs(Backpack:GetChildren()) do
+                ChildAdded(v)
+            end
+            Connections.Backpack = Backpack.ChildAdded:Connect(ChildAdded)
+         end
+         
+         LocalPlayer.CharacterAdded:Connect(CharacterAdded)
+         CharacterAdded(LocalPlayer.Character)
+    end)
+    MainSection:NewButton("Kill All/auto farm", "this is non stop LOL", function()  -- Var
+        local Player = game:GetService("Players").LocalPlayer;
+        local remoteKey;
+        
+        -- Main Loop
+        while wait() do
+            -- ik bad method but idc
+            if (Player.Character and Player.Character:FindFirstChild("WeaponScript") and getsenv(Player.Character.WeaponScript).Fire and not remoteKey) then
+                remoteKey = debug.getupvalue(getsenv(Player.Character.WeaponScript).Fire, 15);
+            end;
+            
+            if (remoteKey) then
+                for i, v in next, Workspace.Baddies:GetChildren() do 
+                    if (v.Parent:FindFirstChild("Zombie") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HeadBox") and v.Humanoid:FindFirstChild("Damage")) then
+                        local args = {
+                            ["BodyPart"]    = v.HeadBox;
+                            ["GibPower"]    = 0;
+                            ["Damage"]      = math.huge;
+                        };
+        
+                        v.Humanoid.Damage:FireServer(args, remoteKey);
+                    end;
+                end;
+            end;
+        end;
+        end)
+        
+            
+    MainSection:NewToggle("All Modifications", "Insta kill,inf ammo", function(state)
+        if state then
+            hookfunction(gcinfo, function()
+                return math.random(200,350)
+             end)
+             
+             -- // Constants \\ --
+             -- [ Services ] --
+             local Services = setmetatable({}, {__index = function(Self, Index)
+                local NewService = game:GetService(Index)
+                if NewService then
+                    Self[Index] = NewService
+                end
+                return NewService
+             end})
+             
+             -- [ LocalPlayer ] --
+             local LocalPlayer = Services.Players.LocalPlayer
+             
+             -- // Variables \\ --
+             local Connections = {
+                Weapon1 = nil;
+                Weapon2 = nil;
+                Weapon3 = nil;
+                Backpack = nil;
+             }
+             
+             local RoundNumber = workspace.RoundNum
+             
+             -- // Event Listeners \\ --
+             local function CharacterAdded(Character)
+                local Backpack = LocalPlayer:WaitForChild('Backpack')
+             
+                local function ChildAdded(Child)
+                    if Child.Name == "Weapon1" or Child.Name == "Weapon2" or Child.Name == "Weapon3" then
+                        local Module = require(Child)
+                        
+                        if Connections[Child.Name] then
+                            Connections[Child.Name]:Disconnect()
+                            Connections[Child.Name] = nil
+                        end
+             
+                        Connections[Child.Name] = Services.RunService.RenderStepped:Connect(function()
+                            Module.Ammo = Module.MaxAmmo
+                            Module.StoredAmmo = Module.MaxAmmo
+                            Module.HeadShot = 250 + (RoundNumber.Value * 10)
+                            Module.TorsoShot = 250 + (RoundNumber.Value * 10)
+                            Module.LimbShot = 250 + (RoundNumber.Value * 10)
+                            Module.BulletPenetration = 1000
+                        end)
+                    end
+                end
+             
+                if Connections.Backpack then
+                    Connections.Backpack:Disconnect()
+                    Connections.Backpack = nil
+                end
+             
+                for i,v in ipairs(Backpack:GetChildren()) do
+                    ChildAdded(v)
+                end
+                Connections.Backpack = Backpack.ChildAdded:Connect(ChildAdded)
+             end
+             
+             LocalPlayer.CharacterAdded:Connect(CharacterAdded)
+             CharacterAdded(LocalPlayer.Character)("Toggle On")
+        else
+            print("Toggle Off")
+        end
+    end)
+    Player:NewSlider("Speed", "Speed lol", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+    Player:NewSlider("Jump Height", "Jump Lol", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game:GetService("Players").LocalPlayer.Character.Humanoid.JumpHeight = s
+    end)
+    Credits:NewButton("SirShady#4296", "UI Designer", function()    print("Clicked")end)
+    Credits:NewButton("MegamanUPS#0001", "Scripter", function()    print("Clicked")end)
+    Credits:NewButton("Khia_N#5231", "Website maker", function()    print("Clicked")end)
+    Credits:NewButton("KAVO UI MIDNIGHT THEME", "ButtonInfo", function()    print("Clicked")end)
+    Credits:NewButton("Btw Kill all is bannable", "Be Careful:)", function()    print("Clicked")end)  
+elseif game.PlaceId == 286090429 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FallenWare-Arsenal", "GrapeTheme")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection1 = Main:NewSection("Main")
+    local Credits1 = Window:NewTab("Credits")
+    local Credits1 = Credits1:NewSection("About/discord")
+    --stuff xd
+    MainSection1:NewButton("Silent Aim", "Fov is small so crosshair must be close to body", function()
+        local function GetService(Name)
+            return game:GetService(Name)
+        end
+        
+        local Players = GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local RunService = GetService("RunService")
+        local BodyPart = nil
+        local Camera = workspace.CurrentCamera
+        local Mouse = LocalPlayer:GetMouse()
+        
+        local function WTS(Object)
+            local ObjectVector = Camera:WorldToScreenPoint(Object.Position)
+            return Vector2.new(ObjectVector.X, ObjectVector.Y)
+        end
+        
+        local function PositionToRay(Origin, Target)
+            return Ray.new(Origin, (Target - Origin).Unit * 600)
+        end
+        
+        local function Filter(Object)
+            if string.find(Object.Name, "Gun") then
+                return
+            end
+            if Object:IsA("Part") or Object:IsA("MeshPart") then
+                return true
+            end
+        end
+        
+        local function MousePositionToVector2()
+            return Vector2.new(Mouse.X, Mouse.Y)
+        end
+        
+        local function IsOnScreen(Object)
+            local IsOnScreen = Camera:WorldToScreenPoint(Object.Position)
+            return IsOnScreen
+        end
+        
+        local function GetClosestBodyPartFromCursor()
+            local ClosestDistance = math.huge
+            for i,  v in next, Players:GetPlayers() do
+                if v ~= LocalPlayer and v.Team ~= LocalPlayer.Team and v.Character and v.Character:FindFirstChild("Humanoid") then
+                    for k,  x in next, v.Character:GetChildren() do
+                        if Filter(x) and IsOnScreen(x) then
+                            local Distance = (WTS(x) - MousePositionToVector2()).Magnitude
+                            if Distance < ClosestDistance then
+                                ClosestDistance = Distance
+                                BodyPart = x
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+        local OldNameCall; 
+        OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
+            local Method = getnamecallmethod()
+            local Args = {...}
+            if Method == "FindPartOnRayWithIgnoreList" and BodyPart ~= nil then
+                Args[1] = PositionToRay(Camera.CFrame.Position, BodyPart.Position)
+                return OldNameCall(Self, unpack(Args))
+            end
+            return OldNameCall(Self, ...)
+        end)
+        
+        RunService:BindToRenderStep("Dynamic Silent Aim", 120, GetClosestBodyPartFromCursor)
+    end)
+    MainSection1:NewButton("ESP", "Name esp only", function()
+        local esp_settings = { ---- table for esp settings 
+    textsize = 8,
+    colour = 255,255,255
+}
+
+local gui = Instance.new("BillboardGui")
+local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
+
+
+
+gui.Name = "Cracked esp"; ---- properties of the esp
+gui.ResetOnSpawn = false
+gui.AlwaysOnTop = true;
+gui.LightInfluence = 0;
+gui.Size = UDim2.new(1.75, 0, 1.75, 0);
+esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+esp.Text = ""
+esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
+esp.BorderSizePixel = 4;
+esp.BorderColor3 = Color3.new(esp_settings.colour)
+esp.BorderSizePixel = 0
+esp.Font = "GothamSemibold"
+esp.TextSize = esp_settings.textsize
+esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
+
+game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
+    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
+            esp.Text = "{"..v.Name.."}"
+            gui:Clone().Parent = v.Character.Head
+    end
+end
+end)
+    end)  
+    MainSection1:NewButton("Gun Mods", "ButtonInfo", function()   for i,v in next, game.ReplicatedStorage.Weapons:GetChildren() do
+        for i,c in next, v:GetChildren() do -- for some reason, using GetDescendants dsent let you modify weapon ammo, so I do this instead
+        for i,x in next, getconnections(c.Changed) do
+        x:Disable() -- probably not needed
+        end
+        if c.Name == "Ammo" or c.Name == "StoredAmmo" then
+        c.Value = 300 -- don't set this above 300 or else your guns wont work
+        elseif c.Name == "AReload" or c.Name == "RecoilControl" or c.Name == "EReload" or c.Name == "SReload" or c.Name == "ReloadTime" or c.Name == "EquipTime" or c.Name == "Spread" or c.Name == "MaxSpread" then
+        c.Value = 0
+        elseif c.Name == "Range" then
+        c.Value = 9e9
+        elseif c.Name == "Auto" then
+        c.Value = true
+        elseif c.Name == "FireRate" or c.Name == "BFireRate" then
+        c.Value = 0.02 -- don't set this lower than 0.02 or else your game will crash
+        end
+        end
+        end
+    end)     
+    MainSection1:NewButton("Wallbang(Read About)", "Press T when toggled", function()
+        shared.WB = false
+shared.Key = 't'
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(Key)
+    if Key == shared.Key then
+        shared.WB = not shared.WB
+    end
+end)
+   
+    if Method == 'FindPartOnRayWithIgnoreList' and shared.WB then
+        table.insert(Arguments[2], game.GetService(game, 'Workspace').Map)
+       
+        return nc(self, unpack(Arguments))
+    end
+   
+
+local mt = getrawmetatable(game)
+local nc = mt.__namecall
+
+setreadonly(mt, false)
+
+mt.__namecall = newcclosure(function(self, ...)
+    local Method = getnamecallmethod()
+    local Arguments = {...}
+   
+    if Method == 'FindPartOnRayWithIgnoreList' and shared.WB then
+        table.insert(Arguments[2], game.GetService(game, 'Workspace').Map)
+       
+        return nc(self, unpack(Arguments))
+    end
+   
+    return nc(self,...)
+end)
+
+    end)  
+    Credits1:NewButton("SirShady#4296", "UI Designer", function()    print("Clicked")end)
+    Credits1:NewButton("MegamanUPS#0001", "Scripter", function()    print("Clicked")end)
+    Credits1:NewButton("Khia_N#5231", "Website maker", function()    print("Clicked")end)
+    Credits1:NewButton("KAVO UI Grape THEME", "ButtonInfo", function()    print("Clicked")end)
+elseif game.PlaceId == 301549746 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("FallenWare-Counter Blox(BETA)", "GrapeTheme")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection1 = Main:NewSection("Main")
+    local Credits3 = Window:NewTab("Gun Mods")
+    local Credits3 = Credits3:NewSection("Gun Mods")
+    local Credits2 = Window:NewTab("Credits")
+    local Credits2 = Credits2:NewSection("About/discord")
+    --stuff xd
+    MainSection1:NewButton("Silent Aim(Read About)", "The more you press the larger the fov", function()
+        --[[
+if you execute the hitboxes will be bigger and invisble if you have problems with seeing it then re-execute the script.
+]]
+ 
+function getplrsname()
+    for i,v in pairs(game:GetChildren()) do
+    if v.ClassName == "Players" then
+    return v.Name
+    end
+    end
+    end
+    local players = getplrsname()
+    local plr = game[players].LocalPlayer
+    coroutine.resume(coroutine.create(function()
+    while  wait(1) do
+    coroutine.resume(coroutine.create(function()
+    for _,v in pairs(game[players]:GetPlayers()) do
+    if v.Name ~= plr.Name and v.Character then
+    v.Character.RightUpperLeg.CanCollide = false
+    v.Character.RightUpperLeg.Transparency = 10
+    v.Character.RightUpperLeg.Size = Vector3.new(13,13,13)
+     
+    v.Character.LeftUpperLeg.CanCollide = false
+    v.Character.LeftUpperLeg.Transparency = 10
+    v.Character.LeftUpperLeg.Size = Vector3.new(13,13,13)
+     
+    v.Character.HeadHB.CanCollide = false
+    v.Character.HeadHB.Transparency = 10
+    v.Character.HeadHB.Size = Vector3.new(13,13,13)
+     
+    v.Character.HumanoidRootPart.CanCollide = false
+    v.Character.HumanoidRootPart.Transparency = 10
+    v.Character.HumanoidRootPart.Size = Vector3.new(13,13,13)
+     
+    end
+    end
+    end))
+    end
+    end))
+    end)
+    MainSection1:NewButton("ESP", "lol", function()
+       -- Auto ESP :  ESP will automatically restart.
+ 
+-- Red Box is Terrorists
+-- Blue Box is Counter-Terrorists
+-- Yellow Box is who holding the C4
+ 
+-- The green "C4" letter appears, when C4 has been placed
+ 
+-- The yellow "C4 fall here" letter appears, when C4 has been fall
+ 
+-- Updated: Automatically removes smoke from smoke bombs
+ 
+-- Game: https://www.roblox.com/games/301549746/Counter-Blox
+ 
+ 
+ 
+ 
+local uis = game:GetService("UserInputService")
+local sg = game:GetService("StarterGui")
+local wp = game:GetService("Workspace")
+local cmr = wp.Camera
+local rs =  game:GetService("ReplicatedStorage")
+local lgt = game:GetService("Lighting")
+local plrs = game:GetService("Players")
+local lplr = plrs.LocalPlayer
+local mouse = lplr:GetMouse()
+ 
+local faces = {"Back","Bottom","Front","Left","Right","Top"}
+ 
+function enableESPCode()
+	for _, o in pairs(plrs:GetPlayers()) do
+		o.CharacterAdded:Connect(function(characterModel)
+            wait(2)
+			if tostring(o.Name) ~= tostring(lplr.Name) then
+                if tostring(o.Name) == tostring(wp.Status.HasBomb.Value) then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(o.Team) == "Terrorists" then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(o.Team) == "Counter-Terrorists" then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                end
+            end
+		end)
+	end
+ 
+	plrs.PlayerAdded:Connect(function(newPlayer)
+		newPlayer.CharacterAdded:Connect(function(characterModel)
+            wait(2)
+			if tostring(newPlayer.Name) ~= tostring(lplr.Name) then
+                if newPlayer.Name == tostring(wp.Status.HasBomb.Value) then
+                    local bgui = Instance.new("BillboardGui",newPlayer.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = newPlayer.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(newPlayer.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(newPlayer.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(newPlayer.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(newPlayer.Team) == "Terrorists" then
+                    local bgui = Instance.new("BillboardGui",newPlayer.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = newPlayer.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(newPlayer.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(newPlayer.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(newPlayer.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                    local bgui = Instance.new("BillboardGui",newPlayer.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = newPlayer.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(newPlayer.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(newPlayer.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(newPlayer.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(newPlayer.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == newPlayer.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                end
+            end
+		end)
+    end)
+ 
+    wp.ChildAdded:connect(function(p)
+        if p.Name == "C4" then
+            local bgui = Instance.new("BillboardGui",p)
+            bgui.Name = ("EGUI")
+            bgui.AlwaysOnTop = true
+            bgui.ExtentsOffset = Vector3.new(0,0,0)
+            bgui.Size = UDim2.new(1,0,1,0)
+            local nam = Instance.new("TextLabel",bgui)
+            nam.Text = p.Name
+            nam.BackgroundTransparency = 1
+            nam.TextSize = 20
+            nam.Font = ("Arial")
+            nam.TextColor3 = Color3.fromRGB(75, 151, 75)
+            nam.Size = UDim2.new(1,0,1,0)
+        end
+    end)
+ 
+    wp.Debris.ChildAdded:connect(function(p)
+        if p.Name == "C4" then
+            local bgui = Instance.new("BillboardGui",p)
+            bgui.Name = ("EGUI")
+            bgui.AlwaysOnTop = true
+            bgui.ExtentsOffset = Vector3.new(0,0,0)
+            bgui.Size = UDim2.new(1,0,1,0)
+            local nam = Instance.new("TextLabel",bgui)
+            nam.Text = p.Name .. " fall here"
+            nam.BackgroundTransparency = 1
+            nam.TextSize = 20
+            nam.Font = ("Arial")
+            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+            nam.Size = UDim2.new(1,0,1,0)
+        end
+    end)
+ 
+    wp["Ray_Ignore"].ChildAdded:connect(function(p)
+        for _, v in pairs(wp["Ray_Ignore"]:GetChildren()) do
+            if tostring(v) == "Smokes" then
+                v:Destroy()
+            end
+        end
+    end)
+ 
+    for _, v in pairs(wp["Ray_Ignore"]:GetChildren()) do
+        if tostring(v) == "Smokes" then
+            v:Destroy()
+        end
+    end
+end
+ 
+enableESPCode()
+ 
+function espFirst()
+	for _, o in pairs(plrs:GetPlayers()) do
+		if tostring(o.Name) ~= tostring(lplr.Name) then
+            if o.Character ~= nil then
+                if tostring(o.Name) == tostring(wp.Status.HasBomb.Value) then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(o.Team) == "Terrorists" then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                elseif tostring(o.Team) == "Counter-Terrorists" then
+                    local bgui = Instance.new("BillboardGui",o.Character.Head)
+                    bgui.Name = ("EGUI")
+                    bgui.AlwaysOnTop = true
+                    bgui.ExtentsOffset = Vector3.new(0,3,0)
+                    bgui.Size = UDim2.new(0,200,0,50)
+                    local nam = Instance.new("TextLabel",bgui)
+                    nam.Text = o.Name
+                    nam.BackgroundTransparency = 1
+                    nam.TextSize = 14
+                    nam.Font = ("Arial")
+                    nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                    nam.Size = UDim2.new(0,200,0,50)
+                    for _, p in pairs(o.Character:GetChildren()) do
+                        if p.Name == ("Head") then 
+                            for _, f in pairs(faces) do
+                                local m = Instance.new("SurfaceGui",p)
+                                m.Name = ("EGUI")
+                                m.Face = f
+                                m.Active      = true
+                                m.AlwaysOnTop = true
+                                local mf = Instance.new("Frame",m)
+                                mf.Size = UDim2.new(1,0,1,0)
+                                mf.BorderSizePixel = 0
+                                mf.BackgroundTransparency = 0.5
+                                mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+ 
+                                wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                                    if tostring(wp.Status.HasBomb.Value) == "" then
+                                        if tostring(o.Team) == "Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+                                        elseif tostring(o.Team) == "Counter-Terrorists" then
+                                            mf.BackgroundColor3 = Color3.fromRGB(13, 105, 172)
+                                        end
+                                    elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                                        mf.BackgroundColor3 = Color3.fromRGB(245, 205, 48)
+                                    end
+                                end)
+ 
+                            end
+                        end
+                    end
+ 
+                    wp.Status.HasBomb:GetPropertyChangedSignal("Value"):connect(function()
+                        if tostring(wp.Status.HasBomb.Value) == "" then
+                            if tostring(o.Team) == "Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(196, 40, 28)
+                            elseif tostring(o.Team) == "Counter-Terrorists" then
+                                nam.TextColor3 = Color3.fromRGB(13, 105, 172)
+                            end
+                        elseif tostring(wp.Status.HasBomb.Value) == o.Name then
+                            nam.TextColor3 = Color3.fromRGB(245, 205, 48)
+                        end
+                    end)
+ 
+                end
+            end
+        end
+    end
+end
+ 
+espFirst()
+    end)
+    MainSection1:NewButton("Skin Changer", "lul", function()
+        local LocalPlayer = game:GetService("Players").LocalPlayer
+        local Client = getsenv(game.Players.LocalPlayer.PlayerGui.Client)
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+         
+        local allSkins = {
+           {'AK47_Ace'},
+           {'AK47_Bloodboom'},
+           {'AK47_Clown'},
+           {'AK47_Code Orange'},
+           {'AK47_Eve'},
+           {'AK47_Gifted'},
+           {'AK47_Glo'},
+           {'AK47_Godess'},
+           {'AK47_Hallows'},
+           {'AK47_Halo'},
+           {'AK47_Hypersonic'},
+           {'AK47_Inversion'},
+           {'AK47_Jester'},
+           {'AK47_Maker'},
+           {'AK47_Mean Green'},
+           {'AK47_Outlaws'},
+           {'AK47_Outrunner'},
+           {'AK47_Patch'},
+           {'AK47_Plated'},
+           {'AK47_Precision'},
+           {'AK47_Quantum'},
+           {'AK47_Quicktime'},
+           {'AK47_Scapter'},
+           {'AK47_Secret Santa'},
+           {'AK47_Shooting Star'},
+           {'AK47_Skin Committee'},
+           {'AK47_Survivor'},
+           {'AK47_Ugly Sweater'},
+           {'AK47_VAV'},
+           {'AK47_Variant Camo'},
+           {'AK47_Yltude'},
+           {'AUG_Chilly Night'},
+           {'AUG_Dream Hound'},
+           {'AUG_Enlisted'},
+           {'AUG_Graffiti'},
+           {'AUG_Homestead'},
+           {'AUG_Maker'},
+           {'AUG_NightHawk'},
+           {'AUG_Phoenix'},
+           {'AUG_Sunsthetic'},
+           {'AWP_Abaddon'},
+           {'AWP_Autumness'},
+           {'AWP_Blastech'},
+           {'AWP_Bloodborne'},
+           {'AWP_Coffin Biter'},
+           {'AWP_Desert Camo'},
+           {'AWP_Difference'},
+           {'AWP_Dragon'},
+           {'AWP_Forever'},
+           {'AWP_Grepkin'},
+           {'AWP_Hika'},
+           {'AWP_Illusion'},
+           {'AWP_Instinct'},
+           {'AWP_JTF2'},
+           {'AWP_Lunar'},
+           {'AWP_Nerf'},
+           {'AWP_Northern Lights'},
+           {'AWP_Pear Tree'},
+           {'AWP_Pink Vision'},
+           {'AWP_Pinkie'},
+           {'AWP_Quicktime'},
+           {'AWP_Racer'},
+           {'AWP_Regina'},
+           {'AWP_Retroactive'},
+           {'AWP_Scapter'},
+           {'AWP_Silence'},
+           {'AWP_Venomus'},
+           {'AWP_Weeb'},
+           {'Banana_Stock'},
+           {'Bayonet_Aequalis'},
+           {'Bayonet_Banner'},
+           {'Bayonet_Candy Cane'},
+           {'Bayonet_Consumed'},
+           {'Bayonet_Cosmos'},
+           {'Bayonet_Crimson Tiger'},
+           {'Bayonet_Crow'},
+           {'Bayonet_Delinquent'},
+           {'Bayonet_Digital'},
+           {'Bayonet_Easy-Bake'},
+           {'Bayonet_Egg Shell'},
+           {'Bayonet_Festive'},
+           {'Bayonet_Frozen Dream'},
+           {'Bayonet_Geo Blade'},
+           {'Bayonet_Ghastly'},
+           {'Bayonet_Goo'},
+           {'Bayonet_Hallows'},
+           {'Bayonet_Intertwine'},
+           {'Bayonet_Marbleized'},
+           {'Bayonet_Mariposa'},
+           {'Bayonet_Naval'},
+           {'Bayonet_Neonic'},
+           {'Bayonet_RSL'},
+           {'Bayonet_Racer'},
+           {'Bayonet_Sapphire'},
+           {'Bayonet_Silent Night'},
+           {'Bayonet_Splattered'},
+           {'Bayonet_Stock'},
+           {'Bayonet_Topaz'},
+           {'Bayonet_Tropical'},
+           {'Bayonet_Twitch'},
+           {'Bayonet_UFO'},
+           {'Bayonet_Wetland'},
+           {'Bayonet_Worn'},
+           {'Bayonet_Wrapped'},
+           {'Bearded Axe_Beast'},
+           {'Bearded Axe_Splattered'},
+           {'Bizon_Autumic'},
+           {'Bizon_Festive'},
+           {'Bizon_Oblivion'},
+           {'Bizon_Saint Nick'},
+           {'Bizon_Sergeant'},
+           {'Bizon_Shattered'},
+           {'Butterfly Knife_Aurora'},
+           {'Butterfly Knife_Bloodwidow'},
+           {'Butterfly Knife_Consumed'},
+           {'Butterfly Knife_Cosmos'},
+           {'Butterfly Knife_Crimson Tiger'},
+           {'Butterfly Knife_Crippled Fade'},
+           {'Butterfly Knife_Digital'},
+           {'Butterfly Knife_Egg Shell'},
+           {'Butterfly Knife_Freedom'},
+           {'Butterfly Knife_Frozen Dream'},
+           {'Butterfly Knife_Goo'},
+           {'Butterfly Knife_Hallows'},
+           {'Butterfly Knife_Icicle'},
+           {'Butterfly Knife_Inversion'},
+           {'Butterfly Knife_Jade Dream'},
+           {'Butterfly Knife_Marbleized'},
+           {'Butterfly Knife_Naval'},
+           {'Butterfly Knife_Neonic'},
+           {'Butterfly Knife_Reaper'},
+           {'Butterfly Knife_Ruby'},
+           {'Butterfly Knife_Scapter'},
+           {'Butterfly Knife_Splattered'},
+           {'Butterfly Knife_Stock'},
+           {'Butterfly Knife_Topaz'},
+           {'Butterfly Knife_Tropical'},
+           {'Butterfly Knife_Twitch'},
+           {'Butterfly Knife_Wetland'},
+           {'Butterfly Knife_White Boss'},
+           {'Butterfly Knife_Worn'},
+           {'Butterfly Knife_Wrapped'},
+           {'CZ_Designed'},
+           {'CZ_Festive'},
+           {'CZ_Holidays'},
+           {'CZ_Lightning'},
+           {'CZ_Orange Web'},
+           {'CZ_Spectre'},
+           {'Cleaver_Spider'},
+           {'Cleaver_Splattered'},
+           {'DesertEagle_Cold Truth'},
+           {'DesertEagle_Cool Blue'},
+           {'DesertEagle_DropX'},
+           {'DesertEagle_Glittery'},
+           {'DesertEagle_Grim'},
+           {'DesertEagle_Heat'},
+           {'DesertEagle_Honor-bound'},
+           {'DesertEagle_Independence'},
+           {'DesertEagle_Krystallos'},
+           {'DesertEagle_Pumpkin Buster'},
+           {'DesertEagle_ROLVe'},
+           {'DesertEagle_Cringe'},
+           {'DesertEagle_Racer'},
+           {'DesertEagle_Scapter'},
+           {'DesertEagle_Skin Committee'},
+           {'DesertEagle_Survivor'},
+           {'DesertEagle_Weeb'},
+           {'DesertEagle_Xmas'},
+           {'DualBerettas_Carbonized'},
+           {'DualBerettas_Dusty Manor'},
+           {'DualBerettas_Floral'},
+           {'DualBerettas_Hexline'},
+           {'DualBerettas_Neon web'},
+           {'DualBerettas_Old Fashioned'},
+           {'DualBerettas_Xmas'},
+           {'Falchion Knife_Bloodwidow'},
+           {'Falchion Knife_Chosen'},
+           {'Falchion Knife_Coal'},
+           {'Falchion Knife_Consumed'},
+           {'Falchion Knife_Cosmos'},
+           {'Falchion Knife_Crimson Tiger'},
+           {'Falchion Knife_Crippled Fade'},
+           {'Falchion Knife_Digital'},
+           {'Falchion Knife_Egg Shell'},
+           {'Falchion Knife_Festive'},
+           {'Falchion Knife_Freedom'},
+           {'Falchion Knife_Frozen Dream'},
+           {'Falchion Knife_Goo'},
+           {'Falchion Knife_Hallows'},
+           {'Falchion Knife_Inversion'},
+           {'Falchion Knife_Late Night'},
+           {'Falchion Knife_Marbleized'},
+           {'Falchion Knife_Naval'},
+           {'Falchion Knife_Neonic'},
+           {'Falchion Knife_Racer'},
+           {'Falchion Knife_Ruby'},
+           {'Falchion Knife_Splattered'},
+           {'Falchion Knife_Stock'},
+           {'Falchion Knife_Topaz'},
+           {'Falchion Knife_Tropical'},
+           {'Falchion Knife_Wetland'},
+           {'Falchion Knife_Worn'},
+           {'Falchion Knife_Wrapped'},
+           {'Falchion Knife_Zombie'},
+           {'Famas_Abstract'},
+           {'Famas_Centipede'},
+           {'Famas_Cogged'},
+           {'Famas_Goliath'},
+           {'Famas_Haunted Forest'},
+           {'Famas_KugaX'},
+           {'Famas_MK11'},
+           {'Famas_Medic'},
+           {'Famas_Redux'},
+           {'Famas_Shocker'},
+           {'Famas_Toxic Rain'},
+           {'FiveSeven_Autumn Fade'},
+           {'FiveSeven_Danjo'},
+           {'FiveSeven_Fluid'},
+           {'FiveSeven_Gifted'},
+           {'FiveSeven_Midnight Ride'},
+           {'FiveSeven_Mr. Anatomy'},
+           {'FiveSeven_Stigma'},
+           {'FiveSeven_Sub Zero'},
+           {'FiveSeven_Summer'},
+           {'Flip Knife_Stock'},
+           {'G3SG1_Amethyst'},
+           {'G3SG1_Autumn'},
+           {'G3SG1_Foliage'},
+           {'G3SG1_Hex'},
+           {'G3SG1_Holly Bound'},
+           {'G3SG1_Mahogany'},
+           {'Galil_Frosted'},
+           {'Galil_Hardware 2'},
+           {'Galil_Hardware'},
+           {'Galil_Toxicity'},
+           {'Galil_Worn'},
+           {'Glock_Angler'},
+           {'Glock_Anubis'},
+           {'Glock_Biotrip'},
+           {'Glock_Day Dreamer'},
+           {'Glock_Desert Camo'},
+           {'Glock_Gravestomper'},
+           {'Glock_Midnight Tiger'},
+           {'Glock_Money Maker'},
+           {'Glock_RSL'},
+           {'Glock_Rush'},
+           {'Glock_Scapter'},
+           {'Glock_Spacedust'},
+           {'Glock_Tarnish'},
+           {'Glock_Underwater'},
+           {'Glock_Wetland'},
+           {'Glock_White Sauce'},
+           {'Gut Knife_Banner'},
+           {'Gut Knife_Bloodwidow'},
+           {'Gut Knife_Consumed'},
+           {'Gut Knife_Cosmos'},
+           {'Gut Knife_Crimson Tiger'},
+           {'Gut Knife_Crippled Fade'},
+           {'Gut Knife_Digital'},
+           {'Gut Knife_Egg Shell'},
+           {'Gut Knife_Frozen Dream'},
+           {'Gut Knife_Geo Blade'},
+           {'Gut Knife_Goo'},
+           {'Gut Knife_Hallows'},
+           {'Gut Knife_Lurker'},
+           {'Gut Knife_Marbleized'},
+           {'Gut Knife_Naval'},
+           {'Gut Knife_Neonic'},
+           {'Gut Knife_Present'},
+           {'Gut Knife_Ruby'},
+           {'Gut Knife_Rusty'},
+           {'Gut Knife_Splattered'},
+           {'Gut Knife_Topaz'},
+           {'Gut Knife_Tropical'},
+           {'Gut Knife_Wetland'},
+           {'Gut Knife_Worn'},
+           {'Gut Knife_Wrapped'},
+           {'Huntsman Knife_Aurora'},
+           {'Huntsman Knife_Bloodwidow'},
+           {'Huntsman Knife_Consumed'},
+           {'Huntsman Knife_Cosmos'},
+           {'Huntsman Knife_Cozy'},
+           {'Huntsman Knife_Crimson Tiger'},
+           {'Huntsman Knife_Crippled Fade'},
+           {'Huntsman Knife_Digital'},
+           {'Huntsman Knife_Egg Shell'},
+           {'Huntsman Knife_Frozen Dream'},
+           {'Huntsman Knife_Geo Blade'},
+           {'Huntsman Knife_Goo'},
+           {'Huntsman Knife_Hallows'},
+           {'Huntsman Knife_Honor Fade'},
+           {'Huntsman Knife_Marbleized'},
+           {'Huntsman Knife_Monster'},
+           {'Huntsman Knife_Naval'},
+           {'Huntsman Knife_Ruby'},
+           {'Huntsman Knife_Splattered'},
+           {'Huntsman Knife_Stock'},
+           {'Huntsman Knife_Tropical'},
+           {'Huntsman Knife_Twitch'},
+           {'Huntsman Knife_Wetland'},
+           {'Huntsman Knife_Worn'},
+           {'Huntsman Knife_Wrapped'},
+           {'Karambit_Bloodwidow'},
+           {'Karambit_Consumed'},
+           {'Karambit_Cosmos'},
+           {'Karambit_Crimson Tiger'},
+           {'Karambit_Crippled Fade'},
+           {'Karambit_Death Wish'},
+           {'Karambit_Digital'},
+           {'Karambit_Egg Shell'},
+           {'Karambit_Festive'},
+           {'Karambit_Frozen Dream'},
+           {'Karambit_Glossed'},
+           {'Karambit_Gold'},
+           {'Karambit_Goo'},
+           {'Karambit_Hallows'},
+           {'Karambit_Jade Dream'},
+           {'Karambit_Jester'},
+           {'Karambit_Lantern'},
+           {'Karambit_Liberty Camo'},
+           {'Karambit_Marbleized'},
+           {'Karambit_Naval'},
+           {'Karambit_Neonic'},
+           {'Karambit_Pizza'},
+           {'Karambit_Quicktime'},
+           {'Karambit_Racer'},
+           {'Karambit_Ruby'},
+           {'Karambit_Scapter'},
+           {'Karambit_Splattered'},
+           {'Karambit_Stock'},
+           {'Karambit_Topaz'},
+           {'Karambit_Tropical'},
+           {'Karambit_Twitch'},
+           {'Karambit_Wetland'},
+           {'Karambit_Worn'},
+           {'M249_Aggressor'},
+           {'M249_P2020'},
+           {'M249_Spooky'},
+           {'M249_Wolf'},
+           {'M4A1_Animatic'},
+           {'M4A1_Burning'},
+           {'M4A1_Desert Camo'},
+           {'M4A1_Heavens Gate'},
+           {'M4A1_Impulse'},
+           {'M4A1_Jester'},
+           {'M4A1_Lunar'},
+           {'M4A1_Necropolis'},
+           {'M4A1_Tecnician'},
+           {'M4A1_Toucan'},
+           {'M4A1_Wastelander'},
+           {'M4A4_BOT[S]'},
+           {'M4A4_Candyskull'},
+           {'M4A4_Delinquent'},
+           {'M4A4_Desert Camo'},
+           {'M4A4_Devil'},
+           {'M4A4_Endline'},
+           {'M4A4_Flashy Ride'},
+           {'M4A4_Ice Cap'},
+           {'M4A4_Jester'},
+           {'M4A4_King'},
+           {'M4A4_Mistletoe'},
+           {'M4A4_Pinkie'},
+           {'M4A4_Pinkvision'},
+           {'M4A4_Pondside'},
+           {'M4A4_Precision'},
+           {'M4A4_Quicktime'},
+           {'M4A4_Racer'},
+           {'M4A4_RayTrack'},
+           {'M4A4_Scapter'},
+           {'M4A4_Stardust'},
+           {'M4A4_Toy Soldier'},
+           {'MAC10_Artists Intent'},
+           {'MAC10_Blaze'},
+           {'MAC10_Golden Rings'},
+           {'MAC10_Pimpin'},
+           {'MAC10_Skeleboney'},
+           {'MAC10_Toxic'},
+           {'MAC10_Turbo'},
+           {'MAC10_Wetland'},
+           {'MAG7_Bombshell'},
+           {'MAG7_C4UTION'},
+           {'MAG7_Frosty'},
+           {'MAG7_Molten'},
+           {'MAG7_Outbreak'},
+           {'MAG7_Striped'},
+           {'MP7_Calaxian'},
+           {'MP7_Cogged'},
+           {'MP7_Goo'},
+           {'MP7_Holiday'},
+           {'MP7_Industrial'},
+           {'MP7_Reindeer'},
+           {'MP7_Silent Ops'},
+           {'MP7_Sunshot'},
+           {'MP9_Blueroyal'},
+           {'MP9_Cob Web'},
+           {'MP9_Cookie Man'},
+           {'MP9_Decked Halls'},
+           {'MP9_SnowTime'},
+           {'MP9_Vaporwave'},
+           {'MP9_Velvita'},
+           {'MP9_Wilderness'},
+           {'Negev_Default'},
+           {'Negev_Midnightbones'},
+           {'Negev_Quazar'},
+           {'Negev_Striped'},
+           {'Negev_Wetland'},
+           {'Negev_Winterfell'},
+           {'Nova_Black Ice'},
+           {'Nova_Cookie'},
+           {'Nova_Paradise'},
+           {'Nova_Sharkesh'},
+           {'Nova_Starry Night'},
+           {'Nova_Terraformer'},
+           {'Nova_Tiger'},
+           {'P2000_Apathy'},
+           {'P2000_Camo Dipped'},
+           {'P2000_Candycorn'},
+           {'P2000_Comet'},
+           {'P2000_Dark Beast'},
+           {'P2000_Golden Age'},
+           {'P2000_Lunar'},
+           {'P2000_Pinkie'},
+           {'P2000_Ruby'},
+           {'P2000_Silence'},
+           {'P250_Amber'},
+           {'P250_Bomber'},
+           {'P250_Equinox'},
+           {'P250_Frosted'},
+           {'P250_Goldish'},
+           {'P250_Green Web'},
+           {'P250_Shark'},
+           {'P250_Solstice'},
+           {'P250_TC250'},
+           {'P90_Demon Within'},
+           {'P90_Elegant'},
+           {'P90_Krampus'},
+           {'P90_Northern Lights'},
+           {'P90_P-Chan'},
+           {'P90_Pine'},
+           {'P90_Redcopy'},
+           {'P90_Skulls'},
+           {'R8_Exquisite'},
+           {'R8_Hunter'},
+           {'R8_Spades'},
+           {'R8_TG'},
+           {'R8_Violet'},
+           {'SG_DropX'},
+           {'SG_Dummy'},
+           {'SG_Kitty Cat'},
+           {'SG_Knighthood'},
+           {'SG_Magma'},
+           {'SG_Variant Camo'},
+           {'SG_Yltude'},
+           {'SawedOff_Casino'},
+           {'SawedOff_Colorboom'},
+           {'SawedOff_Executioner'},
+           {'SawedOff_Opal'},
+           {'SawedOff_Spooky'},
+           {'SawedOff_Sullys Blacklight'},
+           {'Scout_Coffin Biter'},
+           {'Scout_Flowing Mists'},
+           {'Scout_Hellborn'},
+           {'Scout_Hot Cocoa'},
+           {'Scout_Monstruo'},
+           {'Scout_Neon Regulation'},
+           {'Scout_Posh'},
+           {'Scout_Pulse'},
+           {'Scout_Railgun'},
+           {'Scout_Theory'},
+           {'Scout_Xmas'},
+           {'Sickle_Mummy'},
+           {'Sickle_Splattered'},
+           {'Tec9_Charger'},
+           {'Tec9_Gift Wrapped'},
+           {'Tec9_Ironline'},
+           {'Tec9_Performer'},
+           {'Tec9_Phol'},
+           {'Tec9_Samurai'},
+           {'Tec9_Skintech'},
+           {'Tec9_Stocking Stuffer'},
+           {'UMP_Death Grip'},
+           {'UMP_Gum Drop'},
+           {'UMP_Magma'},
+           {'UMP_Militia Camo'},
+           {'UMP_Molten'},
+           {'UMP_Redline'},
+           {'USP_Crimson'},
+           {'USP_Dizzy'},
+           {'USP_Frostbite'},
+           {'USP_Holiday'},
+           {'USP_Jade Dream'},
+           {'USP_Kraken'},
+           {'USP_Nighttown'},
+           {'USP_Paradise'},
+           {'USP_Racing'},
+           {'USP_Skull'},
+           {'USP_Unseen'},
+           {'USP_Worlds Away'},
+           {'USP_Yellowbelly'},
+           {'XM_Artic'},
+           {'XM_Atomic'},
+           {'XM_Campfire'},
+           {'XM_Endless Night'},
+           {'XM_MK11'},
+           {'XM_Predator'},
+           {'XM_Red'},
+           {'XM_Spectrum'},
+           {'Handwraps_Wraps'},
+           {'Sports Glove_Hazard'},
+           {'Sports Glove_Hallows'},
+           {'Sports Glove_Majesty'},
+           {'Strapped Glove_Racer'},
+           {'Strapped Glove_Grim'},
+           {'Strapped Glove_Wisk'},
+           {'Fingerless Glove_Scapter'},
+           {'Fingerless Glove_Digital'},
+           {'Fingerless Glove_Patch'},
+           {'Handwraps_Guts'},
+           {'Handwraps_Wetland'},
+           {'Strapped Glove_Molten'},
+           {'Fingerless Glove_Crystal'},
+           {'Sports Glove_Royal'},
+           {'Strapped Glove_Kringle'},
+           {'Handwraps_MMA'},
+           {'Sports Glove_Weeb'},
+           {'Sports Glove_CottonTail'},
+           {'Sports Glove_RSL'},
+           {'Handwraps_Ghoul Hex'},
+           {'Handwraps_Phantom Hex'},
+           {'Handwraps_Spector Hex'},
+           {'Handwraps_Orange Hex'},
+           {'Handwraps_Purple Hex'},
+           {'Handwraps_Green Hex'},
+        }
+         
+        local isUnlocked
+         
+        local mt = getrawmetatable(game)
+        local oldNamecall = mt.__namecall
+        setreadonly(mt, false)
+         
+        local isUnlocked
+         
+        mt.__namecall = newcclosure(function(self, ...)
+           local args = {...}
+           if getnamecallmethod() == "InvokeServer" and tostring(self) == "Hugh" then
+               return
+           end
+           if getnamecallmethod() == "FireServer" then
+               if args[1] == LocalPlayer.UserId then
+                   return
+               end
+               if string.len(tostring(self)) == 38 then
+                   if not isUnlocked then
+                       isUnlocked = true
+                       for i,v in pairs(allSkins) do
+                           local doSkip
+                           for i2,v2 in pairs(args[1]) do
+                               if v[1] == v2[1] then
+                                   doSkip = true
+                               end
+                           end
+                           if not doSkip then
+                               table.insert(args[1], v)
+                           end
+                       end
+                   end
+                   return
+               end
+               if tostring(self) == "DataEvent" and args[1][4] then
+                   local currentSkin = string.split(args[1][4][1], "_")[2]
+                   if args[1][2] == "Both" then
+                       LocalPlayer["SkinFolder"]["CTFolder"][args[1][3]].Value = currentSkin
+                       LocalPlayer["SkinFolder"]["TFolder"][args[1][3]].Value = currentSkin
+                   else
+                       LocalPlayer["SkinFolder"][args[1][2] .. "Folder"][args[1][3]].Value = currentSkin
+                   end
+               end
+           end
+           return oldNamecall(self, ...)
+        end)
+         
+        setreadonly(mt, true)
+         
+        Client.CurrentInventory = allSkins
+         
+        local TClone, CTClone = LocalPlayer.SkinFolder.TFolder:Clone(), game.Players.LocalPlayer.SkinFolder.CTFolder:Clone()
+        LocalPlayer.SkinFolder.TFolder:Destroy()
+        LocalPlayer.SkinFolder.CTFolder:Destroy()
+        TClone.Parent = LocalPlayer.SkinFolder
+        CTClone.Parent = LocalPlayer.SkinFolder
+    end)  
+    Credits3:NewButton("No recoil", "lol ez", function()
+        local env = getsenv(game:service('Players').LocalPlayer.PlayerGui.Client)
+
+env.KickBack = function() end
+    end)  
+    Credits3:NewButton("Insta Kill(dosent work yet)", "Insta kill", function()
+        getgenv().OneShot = true -- true/false
+
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+local nc = mt.__namecall
+
+mt.__namecall = newcclosure(function(self, ...)
+    local Method = getnamecallmethod()
+    local Args = {...}
+
+    if Method == 'FireServer' and self.Name == 'HitPart' and OneShot then
+        for i = 1, 3 do
+            nc(self, unpack(Args))
+        end
+    end
+
+    return nc(self, ...)
+end)
+    end)
+    Credits3:NewButton("inf ammo(Read About)", "drop weapon when clicked then pickup again", function()
+        while wait(.5) do
+            for i,v in pairs(game.Workspace.Debris:GetChildren()) do
+                if v.Name ~= "SurfaceGui" and v.Name ~= "Bullet" and v.Name ~= "Model" then
+                    v.Ammo.Value       = 9999999999
+                    v.StoredAmmo.Value = 9999999999
+                end
+            end
+         end
+          
+         
+    end)
+    Credits3:NewButton("Kill All GUI", "Best Kill all", function()
+        -- PROHUB KILL ALL NO LAG AND THE BEST
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local killall = Instance.new("TextButton")
+local label = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+main.Position = UDim2.new(0, 0, 0.3595092, 0)
+main.Size = UDim2.new(0, 100, 0, 85)
+main.Active = true 
+main.Draggable = true
+
+killall.Name = "killall"
+killall.Parent = main
+killall.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+killall.Position = UDim2.new(0, 0, 0.407784998, 0)
+killall.Size = UDim2.new(0, 100, 0, 50)
+killall.Font = Enum.Font.SourceSans
+killall.Text = "Kill All(no lag)"
+killall.TextColor3 = Color3.fromRGB(0, 0, 0)
+killall.TextSize = 14.000
+killall.MouseButton1Down:connect(function()
+	local Remote = game.ReplicatedStorage.Events['HitPart']
+
+	for _,v in pairs(game:GetService"Players":GetChildren()) do
+		if v.Team ~= game.Players.LocalPlayer.Team then
+			if v.Character and v.Character.Head then
+				local Arguments = {
+					[1] = workspace[v.Name].Head,
+					[2] = workspace[v.Name].Head.Position,
+					[3] = workspace[game.Players.LocalPlayer.Name].EquippedTool.Value,
+					[4] = math.rad(1,100000),
+					[5] = workspace[game.Players.LocalPlayer.Name].Gun,
+					[8] = 8, --damage multiplier
+					[9] = false,
+					[10] = false,
+					[11] = Vector3.new(),
+					[12] = math.rad(1,100000),
+					[13] = Vector3.new()
+				}
+
+				Remote:FireServer(unpack(Arguments))
+			end
+		end
+	end
+end) 
+
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(93, 93, 93)
+label.Position = UDim2.new(0, 0, -0.00741325831, 0)
+label.Size = UDim2.new(0, 100, 0, 35)
+label.Font = Enum.Font.SourceSans
+label.Text = "PROHUB CBRO"
+label.TextColor3 = Color3.fromRGB(0, 0, 0)
+label.TextSize = 14.000
+    end)
+    Credits2:NewButton("SirShady#4296", "UI Designer", function()    print("Clicked")end)
+    Credits2:NewButton("MegamanUPS#0001", "Scripter", function()    print("Clicked")end)
+    Credits2:NewButton("Khia_N#5231", "Website maker", function()    print("Clicked")end)
+    Credits2:NewButton("KAVO UI Grape THEME", "ButtonInfo", function()    print("Clicked")end)
+end
+if game.PlaceId == 155615604 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("FallenWare | Prison Life v2", "Sentinel")
+        
+        --Locals
+        
+        local Main = Window:NewTab("Main")
+        local MainSection = Main:NewSection("Main")
+    
+        local Player = Window:NewTab("Player")
+        local PlayerSection = Player:NewSection("Player")
+    
+        local Trolling = Window:NewTab("Trolling")
+        local TrollingSection = Trolling:NewSection("Trolling")
+    
+        local Teleports = Window:NewTab("Teleports")
+        local TeleportSection = Teleports:NewSection("Teleports")
+    
+        local Credits = Window:NewTab("Credits")
+        local CreditsSection = Credits:NewSection("About/Section")
+    
+        local Credits= Window:NewTab("Discord")
+        local CreditsSection2 = Credits:NewSection("Discord etc")
+    
+        --Makes some features work
+        getgenv().godmode = false
+        getgenv().noclip = false
+        getgenv().onepunch = false
+        local flying = false
+        mainRemotes = game.ReplicatedStorage
+        meleeRemote = mainRemotes['meleeEvent']
+        mouse = game.Players.LocalPlayer:GetMouse()
+        punching = false
+        cooldown = false
+        getgenv().changedwalkspeed = false
+        getgenv().changedjumppower = false
+        getgenv().changedhipheight = false
+        getgenv().walkspeed = 0
+        getgenv().jumppower = 0
+        getgenv().hipheight = 0
+         
+        function punch()
+        cooldown = true
+        local part = Instance.new("Part", game.Players.LocalPlayer.Character)
+        part.Transparency = 1
+        part.Size = Vector3.new(5, 2, 3)
+        part.CanCollide = false
+        local w1 = Instance.new("Weld", part)
+        w1.Part0 = game.Players.LocalPlayer.Character.Torso
+        w1.Part1 = part
+        w1.C1 = CFrame.new(0,0,2)
+        part.Touched:connect(function(hit)
+        if game.Players:FindFirstChild(hit.Parent.Name) then
+        local plr = game.Players:FindFirstChild(hit.Parent.Name)
+        if plr.Name ~= game.Players.LocalPlayer.Name then
+        part:Destroy()
+        
+        for i = 1,100 do
+        meleeRemote:FireServer(plr)
+        end
+        end
+        end
+        end)
+        
+        wait(1)
+        cooldown = false
+        part:Destroy()
+        end
+        
+        
+        mouse.KeyDown:connect(function(key)
+        if cooldown == false then
+        if key:lower() == "f" then
+        
+        if getgenv().onepunch then
+        punch()
+        end
+        end
+        end
+        end)
+    
+    
+        --Main
+    
+        MainSection:NewButton("Anti-Taze", "Makes you uneffected when tazed", function()
+        game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+        game.Players.LocalPlayer.CharacterAdded:connect(function()
+        game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+        game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+       end)
+    end)
+    
+    MainSection:NewButton("BTools","Gives you a set of BTools", function()
+        local tool1 = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+        local tool2 = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+        local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+        tool1.BinType = "Clone"
+        tool2.BinType = "Hammer"
+        tool3.BinType = "Grab"
+    end)
+    
+        MainSection:NewDropdown("Change Team", "Changes your current team",{"Criminal", "Neutral", "Gaurd", "Inmate"},function(v)
+            if v == "Criminal" then
+                local weld02 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-919.958, 95.327, 2138.189)
+                wait(1)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(weld02)
+            elseif v == "Inmate" then
+                game.Workspace.Remote.TeamEvent:FireServer("Bright orange")
+            elseif v == "Gaurd" then
+                game.Workspace.Remote.TeamEvent:FireServer("Bright blue")
+            elseif v == "Neutral" then
+                game.Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+            end
+        end)
+    
+        MainSection:NewButton("Give All Items","Gives all the items to your player",function()
+            for i,v in pairs(game.Workspace.Prison_ITEMS.single:GetChildren()) do
+                if v:FindFirstChild("ITEMPICKUP") then
+                    game.Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+                end
+            end
+            for i,v in pairs(game.Workspace.Prison_ITEMS.giver:GetChildren()) do
+                if v:FindFirstChild("ITEMPICKUP") then
+                    game.Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+                end
+            end
+        end)
+    
+        MainSection:NewDropdown("Gun Mod", "Makes the gun op", {"M9", "Remington 870", "AK-47"}, function(m)
+            local module = nil
+            if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(m) then
+                module = require(game:GetService("Players").LocalPlayer.Backpack[m].GunStates)
+            elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild(m) then
+                module = require(game:GetService("Players").LocalPlayer.Character[m].GunStates)
+            end
+            if module ~= nil then
+                module["MaxAmmo"] = math.huge
+                module["CurrentAmmo"] = math.huge
+                module["StoredAmmo"] = math.huge
+                module["FireRate"] = 0.1
+                module["Spread"] = 0
+                module["Range"] = math.huge
+                module["Bullets"] = 8
+                module["ReloadTime"] = 0.000001
+                module["AutoFire"] = true
+                print('Successfully modded the gun \'' ..m.. '\'')
+            else
+                print('Please have the gun you want to mod in your inventory first')
+            end
+        end)
+    
+        
+        MainSection:NewButton("Infinite Yield", "Loads Infinite Yield to your game", function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+        end)
+    
+        MainSection:NewButton("No Doors","Removes All Doors",function()
+            game.Workspace.Doors:Destroy()
+            game.Workspace.Prison_Cellblock.doors:Destroy()
+            local Warehouses = game.Workspace.Warehouses
+            for i,v in pairs(Warehouses:GetDescendants()) do
+                if v.Name == "doors" then
+                   v:Destroy()
+                end
+            end
+        end)
+    
+     MainSection:NewButton("Reset","Force resets your character", function()
+        game.Workspace.Remote.loadchar:InvokeServer(game.Players.LocalPlayer.Name)
+      end)
+    
+      MainSection:NewButton("Server Hop", "Makes the player join a new server",function()
+        local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
+        for i,v in pairs(Servers.data) do
+            if v.playing ~= v.maxPlayers then
+                game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
+            end
+        end
+    end)
+    
+        --Player
+    
+        PlayerSection:NewButton("Flight (K)","Allows you to fly around the map",function()
+            repeat wait()
+            until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Torso") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+            local mouse = game.Players.LocalPlayer:GetMouse()
+            repeat wait() until mouse
+            local plr = game.Players.LocalPlayer
+            local torso = plr.Character.Torso
+            local deb = true
+            local ctrl = {f = 0, b = 0, l = 0, r = 0}
+            local lastctrl = {f = 0, b = 0, l = 0, r = 0}
+            local maxspeed = 25
+            local speed = 0
+            
+            function Fly()
+                local bg = Instance.new("BodyGyro", torso)
+                bg.P = 9e4
+                bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+                bg.cframe = torso.CFrame
+                local bv = Instance.new("BodyVelocity", torso)
+                bv.velocity = Vector3.new(0,0.1,0)
+                bv.maxForce = Vector3.new(9e9, 9e9, 9e9)
+                repeat wait()
+                plr.Character.Humanoid.PlatformStand = true
+                if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then
+                speed = speed+.5+(speed/maxspeed)
+                if speed > maxspeed then
+                speed = maxspeed
+                end
+                elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then
+                speed = speed-1
+                if speed < 0 then
+                speed = 0
+                end
+                end
+                if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then
+                bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+                lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r}
+                elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then
+                bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed
+                else
+                bv.velocity = Vector3.new(0,0.1,0)
+                end
+                bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0)
+                until not flying
+                ctrl = {f = 0, b = 0, l = 0, r = 0}
+                lastctrl = {f = 0, b = 0, l = 0, r = 0}
+                speed = 0
+                bg:Destroy()
+                bv:Destroy()
+                plr.Character.Humanoid.PlatformStand = false
+                end
+                mouse.KeyDown:connect(function(key)
+                if key:lower() == "k" then
+                if flying then flying = false
+                else
+                flying = true
+                Fly()
+                end
+                elseif key:lower() == "w" then
+                ctrl.f = 1
+                elseif key:lower() == "s" then
+                ctrl.b = -1
+                elseif key:lower() == "a" then
+                ctrl.l = -1
+                elseif key:lower() == "d" then
+                ctrl.r = 1
+            end
+        end)
+            mouse.KeyUp:connect(function(key)
+            if key:lower() == "w" then
+            ctrl.f = 0
+            elseif key:lower() == "s" then
+            ctrl.b = 0
+            elseif key:lower() == "a" then
+            ctrl.l = 0
+            elseif key:lower() == "d" then
+            ctrl.r = 0
+            end
+            end)
+            Fly()
+        end)
+    
+       PlayerSection:NewToggle("GodMode","Automatically respawns you",function(state)
+            getgenv().godmode = state
+       end)
+    
+       PlayerSection:NewTextBox("HipHeight", "Sets your HipHeight", function(h)
+        getgenv().changedhipheight = true
+        if tonumber(h) then
+            game.Players.LocalPlayer.Character.Humanoid.HipHeight = h
+        end
+    end)
+    
+        PlayerSection:NewToggle("Inf Stamina","Infinite Stamina",function(state)
+            getgenv().infstamina = state
+            if state == false then
+                local plr = game:GetService("Players").LocalPlayer
+                for i,v in next, getgc() do 
+                    if type(v) == "function" and getfenv(v).script and getfenv(v).script == plr.Character.ClientInputHandler then 
+                        for i2,v2 in next, debug.getupvalues(v) do 
+                            if type(v2) == "number" then 
+                                debug.setupvalue(v, i2, 12)
+                            end
+                        end
+                    end
+                end
+            else
+                local plr = game:GetService("Players").LocalPlayer
+                for i,v in next, getgc() do 
+                    if type(v) == "function" and getfenv(v).script and getfenv(v).script == plr.Character.ClientInputHandler then 
+                        for i2,v2 in next, debug.getupvalues(v) do 
+                            if type(v2) == "number" then 
+                                debug.setupvalue(v, i2, math.huge)
+                            end
+                        end
+                    end
+                end
+            end
+    end)
+    PlayerSection:NewTextBox("Jump Power", "Sets your JumpPower" ,function(j)
+        getgenv().changedjumppower = true
+        if tonumber(j) then
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+        end
+    end)
+    
+        PlayerSection:NewToggle("Noclip", "Allows you to walk through wall", function(state)
+            getgenv().noclip = state
+        end)
+    
+        PlayerSection:NewToggle("Super Punch", "Kills anyone with one punch", function(state)
+            getgenv().onepunch = state
+        end)
+    
+        PlayerSection:NewTextBox("WalkSpeed", "Sets your WalkSpeed", function(s)
+            getgenv().changedwalkspeed = true
+            if tonumber(s) then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end
+        end)
+    
+        --Trolling
+    
+        TrollingSection:NewToggle("Lag Server (Use Remington 870)", "Lags/Crashed the server your in", function(state)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(825.859009, 99.9899826, 2254.7981, 0.998627067, 5.63668556e-10, -0.0523826852, -3.04493808e-09, 1, -4.72883173e-08, 0.0523826852, 4.73828976e-08, 0.998627067)
+        a = game.Players.LocalPlayer.Backpack:WaitForChild("Remington 870")
+        b = require(a.GunStates)
+    
+        b.AutoFire = true
+        b.Spread = math.huge
+        b.MaxAmmo = math.huge
+        b.StoredAmmo = math.huge
+        b.CurrentAmmo = math.huge
+        b.FireRate = 0
+        b.Bullets = 75
+    
+    a.Parent = game.Players.LocalPlayer.Character
+        end)
+    
+        TrollingSection:NewButton("Naked", "No clothes until you reset",function()
+            for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if v:IsA("Clothing") or v:IsA("ShirtGraphic") then
+                    v:Destroy()
+                end
+            end
+        end)
+    
+        --Teleports and shit
+    
+       TeleportSection:NewButton("Cafeteria", "Teleports you to the Cafeteria",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(916.163, 101.481, 2345.52)
+        end)
+    
+       TeleportSection:NewButton("Cell Block", "Teleports you to the Cell Block",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.056, 101.49, 2440.01)
+        end)
+    
+        TeleportSection:NewButton("Criminal Base", "Teleports you to the Criminal Base",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-891.105, 95.5991, 2056.7)
+        end)
+    
+        TeleportSection:NewButton("Entrance Gate", "Teleports you to the Entrance Gate",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(500.703, 99.4857, 2216.35)
+        end)
+        
+        TeleportSection:NewButton("Entrance", "Teleports you to the Entrance",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(656.704, 101.489, 2272.54)
+        end)
+        
+        TeleportSection:NewButton("Guards Only", "Teleports you to the Guards only room",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(835.739, 101.491, 2312.04)
+        end)
+        
+        TeleportSection:NewButton("Hallway", "Teleports you to the Hallway",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(859.539, 101.47, 2361.49)
+        end)
+        
+       TeleportSection:NewButton("Yard", "Teleports you to the Yard",function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(820.699, 101.457, 2380.45)
+        end)
+    
+        --Credits
+    
+        CreditsSection:NewButton("SirShadyVI#4296", "Owner/Scripter", function()
+            print("Clicked")
+        end)
+        CreditsSection:NewButton("Khia_n#5231", "Website/Executer dev", function()
+            print("Clicked")
+        end)
+        CreditsSection:NewButton("MegamanUPS#0001", "Scripter", function()
+            print("Clicked")
+        end)
+        CreditsSection:NewButton("beluga jr#6809", "Website/Discord bot dev", function()
+            print("Clicked")
+        end)
+        CreditsSection:NewButton("Melon#9982", "Discord bot dev", function()
+            print("Clicked")
+        end)
+        CreditsSection:NewButton("Cold#8102", "random dumbass that i added!", function()
+            print("Clicked")
+        end)
+        
+        
+    -- NEW SECTION DISCORD ETC 
+    
+    CreditsSection2:NewKeybind("Toggle UI", "close/open", Enum.KeyCode.KeypadOne, function()
+        Library:ToggleUI()
+    end)
+    
+    CreditsSection2:NewButton("Copy Discord", "Copies our Discord link to your clipboard", function()
+        setclipboard(tostring('https://discord.gg/BKZAsqJ7x5'))
+        print('Copied!')
+    end)
+    
+    CreditsSection2:NewButton("Copy GitHub(dont skid you fatass)", "Copies my GitHub link to your clipboard ofc lol", function()
+        setclipboard(tostring('https://github.com/PROHUBDEV'))
+        print('Copied!')
+    end)
+    
+    CreditsSection2:NewButton("Non Supported games hub loadstring", "Copies the loadstring for non supported games", function()
+        setclipboard(tostring("loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/PROHUB-MAIN-PAGE/main/FallenWare%20lol%20f', true))()"))
+        print('Copied!')
+    end)
+    
+     
+    
+        -- f in the chat fuck me daddy
+        
+    game:GetService("RunService").RenderStepped:Connect(function()
+            if game.Players.LocalPlayer.Character.Humanoid.Health == 0 and getgenv().godmode then
+                local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+                game.Workspace.Remote.loadchar:InvokeServer(game.Players.LocalPlayer.Name)  
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+            end
+    end)
+    
+            if getgenv().noclip then
+                if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+                    game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(11)
+            end
+        end
+    end
+
