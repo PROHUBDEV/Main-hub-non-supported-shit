@@ -5,30 +5,29 @@ if game.PlaceId == 155615604 then -- Prison Life
      loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end 
-elseif game.PlaceID == 3956818381 then -- ninja legends
+if game.PlaceID == 3956818381 then -- ninja legends
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-elseif game.PlaceID == 1962086868 then tower of hell
+if game.PlaceID == 1962086868 then --tower of hell
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-elseif game.PlaceID == 537413528 then -- Build A boat Auto Farm
+if game.PlaceID == 537413528 then -- Build A boat Auto Farm
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-elseif game.PlaceID == 443406476 then -- Project Lazarus
+if game.PlaceID == 443406476 then -- Project Lazarus
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-elseif game.PlaceID == 28609042 then -- Arsenal
+if game.PlaceID == 28609042 then -- Arsenal
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-elseif game.PlaceID == 301549746 then -- Counter Blox
+if game.PlaceID == 301549746 then -- Counter Blox
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/dont%20skid%20lol', true))()
 --made by SirShady#4296
 end
-
-  
+else 
  
