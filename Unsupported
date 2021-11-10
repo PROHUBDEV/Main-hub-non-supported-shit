@@ -20,7 +20,8 @@ local section2 = page:addSection("Individuals")
 --section 1
 
 section1:addButton("FallenWare", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/PROHUB-MAIN-PAGE/main/PROHUB(Updated%20October%202021)'))() 
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/skids%20are%20gay%20fuck%20you', true))()
+--made by SirShady#4296
 end)
  
 section1:addButton("Old Script Hub", function()
