@@ -22,4 +22,5 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-no
 --made by SirShady#4296
 else
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PROHUBDEV/Main-hub-non-supported-shit/main/Unsupported', true))()
+--non supported games
 end
